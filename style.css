@@ -1,0 +1,269 @@
+/* Fonts */
+@font-face {
+    font-family: "Young Serif";
+    src: url(/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+
+/* Root */
+:root {
+    --clr-nutmeg: #854632;
+    --clr-dark-raspberry: #7b284f;
+
+    --clr-white: #fff;
+    --clr-rose-white: hsl(330, 100%, 98%, .5);
+    --clr-eggshell: #f3e6d8;
+    --clr-light-grey: #e4ded8;
+    --clr-wenge-brown: #5f574e;
+    --clr-dark-charcoal: #302d2c;
+
+    --ff-main: "Outfit", sans-serif;
+    --ff-headings: "Young Serif", serif;
+
+    --fs-main: 1rem;
+    --fs-headings: 1.75rem;
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+/* Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul, ol {
+    padding: 0 1rem;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.2;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+  font-family: var(--ff-headings);
+  font-size: var(--fs-headings);
+  font-weight: var(--fw-400);
+  color: var(--clr-nutmeg);
+  margin-bottom: 1.2rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  font-style: italic;
+  color: var(--clr-dark-raspberry);
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Main Styling */
+
+body {
+    font-family: var(--ff-main);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-main);
+    line-height: 1.5;
+    color: var(--clr-wenge-brown);
+    background: var(--clr-eggshell);
+}
+
+
+/* Text Styling */
+h1 {
+    margin-left: .2rem;
+    text-wrap: pretty;
+}
+
+.recipe-title {
+    font-size: 2.5rem;
+    color: var(--clr-dark-charcoal);
+}
+
+.prep-title {
+    font-size: 1.275rem;
+    font-weight: var(--fw-600);
+    color: var(--clr-dark-raspberry);
+    margin-bottom: .5rem;
+}
+
+span {
+    font-weight: var(--fw-700);
+}
+
+[data-cell="nutrient-value"] {
+   color: var(--clr-nutmeg); 
+   font-weight: var(--fw-600);
+}
+
+li {
+    padding-left: 1rem;
+    margin-bottom: .5rem;
+}
+
+li::marker {
+    color: var(--clr-nutmeg);
+    font-weight: var(--fw-600);
+}
+
+ul li::marker {
+    font-size: 12px;
+}
+
+.prep-list li::marker {
+    color: var(--clr-dark-raspberry);
+}
+
+.ingredient-list li::marker {
+    list-style-type: square;
+}
+
+/* Layout Styling */
+.wrapper {
+    display: grid;
+    place-items: center;
+}
+
+.recipe-wrapper {
+    max-width: 45em;
+    padding:2.4rem;
+    margin: 7rem 0 5.5rem;
+    border-radius: 1.5rem;
+    background: var(--clr-white);
+}
+
+/* General Styles */
+.recipe-img {
+    border-radius: .7rem;
+    margin-bottom: 2rem;
+}
+
+section {
+    margin-top: 2rem;
+}
+
+hr {
+    outline: none;
+    border: none;
+    height: 1px;
+    background: var(--clr-light-grey);
+    margin-top: 2rem;
+}
+
+.prep-time {
+    padding: 1.75rem;
+    border-radius: .8rem;
+    margin-top: 2rem;
+    background: var(--clr-rose-white);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    border-bottom: 1px solid var(--clr-light-grey);
+} 
+
+tr:last-child {
+    border-bottom: none;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+/* media query */
+@media (max-width: 500px) {
+    .recipe-wrapper {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .recipe-img {
+        border-radius: 0;
+    }
+
+    .recipe-container {
+        padding: 0 1.75rem;
+    }
+
+    .recipe-title {
+        font-size: 2.2rem;
+    }
+}
+
